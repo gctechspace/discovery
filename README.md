@@ -1,4 +1,0 @@
-discovery
-=========
-
-GCTechSpace Discovery Workshops
