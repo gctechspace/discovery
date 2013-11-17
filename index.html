@@ -13,7 +13,7 @@
             if (!result.error) {
                 // Grab the container we will put the results into
                 var container = document.getElementById("content-table");
-                container.innerHTML = '';
+                container.innerHTML = '<tr> <th>Title</th> <th>Location</th> <th>Date/Time</th> </tr>';
 
                 // Loop through the feeds, putting the titles onto the page.
                 // Check out the result object for a list of properties returned in each entry.
@@ -78,13 +78,7 @@
 </div>
 
 <div id="content">
-    <table id="content-table">
-        <tr>
-            <th>Title</th>
-            <th>Location</th>
-            <th>Date/Time</th>
-        </tr>
-    </table>
+    <table id="content-table">Loading....</table>
 </div>
 <div id="footer">
     <p>
