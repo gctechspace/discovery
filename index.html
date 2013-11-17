@@ -12,7 +12,7 @@
         function feedLoaded(result) {
             if (!result.error) {
                 // Grab the container we will put the results into
-                var container = document.getElementById("content");
+                var container = document.getElementById("content-table");
                 container.innerHTML = '';
 
                 // Loop through the feeds, putting the titles onto the page.
@@ -20,9 +20,10 @@
                 // http://code.google.com/apis/ajaxfeeds/documentation/reference.html#JSON
                 for (var i = 0; i < result.feed.entries.length; i++) {
                     var entry = result.feed.entries[i];
-                    var div = document.createElement("div");
-                    div.appendChild(document.createTextNode(entry.title));
-                    container.appendChild(div);
+                    var tr = document.createElement("tr");
+                    var td = tr.createElement("td");
+                    td.appendChild(document.createTextNode(entry.title));
+                    container.appendChild(tr);
                 }
             }
         }
@@ -76,7 +77,15 @@
     </p>
 </div>
 
-<div id="content">Loading...</div>
+<div id="content">
+    <table id="content-table">
+        <tr>
+            <th>Title</th>
+            <th>Location</th>
+            <th>Date/Time</th>
+        </tr>
+    </table>
+</div>
 <div id="footer">
     <p>
         All workshops are currently $20 (plus booking fee of $1.50) per child and bookings are essential with payment
@@ -123,6 +132,7 @@
         <span>
         <iframe width="425" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                 src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1,+San+Antonio+Dr,+Robina+QLD,+Australia&amp;aq=&amp;sll=-28.077192,153.382085&amp;sspn=0.002826,0.005284&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=San+Antonio+Dr,+Robina+Queensland+4226,+Australia&amp;ll=-28.077036,153.382555&amp;spn=0.002826,0.005284&amp;z=14&amp;output=embed"></iframe>
+            </span>
         <span>
             <img src="images/robina.jpg"/>
         </span>
