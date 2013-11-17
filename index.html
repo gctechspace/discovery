@@ -1,48 +1,127 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+<head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title>Gold Coast TechSpace Discovery Workshops</title>
     <script src="//www.google.com/jsapi?key=AIzaSyA5m1Nc8ws2BbmPRwKu5gFradvD_hgq6G0" type="text/javascript"></script>
     <script type="text/javascript">
-    /*
-    *  How to load a feed via the Feeds API.
-    */
-    
-    google.load("feeds", "1");
-    
-    // Our callback function, for when a feed is loaded.
-    function feedLoaded(result) {
-      if (!result.error) {
-        // Grab the container we will put the results into
-        var container = document.getElementById("content");
-        container.innerHTML = '';
-    
-        // Loop through the feeds, putting the titles onto the page.
-        // Check out the result object for a list of properties returned in each entry.
-        // http://code.google.com/apis/ajaxfeeds/documentation/reference.html#JSON
-        for (var i = 0; i < result.feed.entries.length; i++) {
-          var entry = result.feed.entries[i];
-          var div = document.createElement("div");
-          div.appendChild(document.createTextNode(entry.title));
-          container.appendChild(div);
+
+        google.load("feeds", "1");
+
+        // Our callback function, for when a feed is loaded.
+        function feedLoaded(result) {
+            if (!result.error) {
+                // Grab the container we will put the results into
+                var container = document.getElementById("content");
+                container.innerHTML = '';
+
+                // Loop through the feeds, putting the titles onto the page.
+                // Check out the result object for a list of properties returned in each entry.
+                // http://code.google.com/apis/ajaxfeeds/documentation/reference.html#JSON
+                for (var i = 0; i < result.feed.entries.length; i++) {
+                    var entry = result.feed.entries[i];
+                    var div = document.createElement("div");
+                    div.appendChild(document.createTextNode(entry.title));
+                    container.appendChild(div);
+                }
+            }
         }
-      }
-    }
-    
-    function OnLoad() {
-      // Create a feed instance that will grab Digg's feed.
-      var feed = new google.feeds.Feed("http://www.stickytickets.com.au/gctechspace.rss");
-    
-      // Calling load sends the request off.  It requires a callback function.
-      feed.load(feedLoaded);
-    }
-    
-    google.setOnLoadCallback(OnLoad);
+
+        function OnLoad() {
+            // Create a feed instance that will grab Digg's feed.
+            var feed = new google.feeds.Feed("http://www.stickytickets.com.au/gctechspace.rss");
+
+            // Calling load sends the request off.  It requires a callback function.
+            feed.load(feedLoaded);
+        }
+
+        google.setOnLoadCallback(OnLoad);
     </script>
-  </head>
-  <body style="font-family: Arial;border: 0 none;">
-    <div id="content">Loading...</div>
-  </body>
+</head>
+<body style="font-family: Arial;border: 0 none;">
+<div id="header">
+    <div id="header-image" style="text-align: center;"><img src="images/discovery.png"/></div>
+    <p>Gold Coast TechSpace Discovery workshops run during the school holidays and on ocassional weekends in term
+        time, they include Arduino Electronics, Robotics, Lego Mindstorms, Minecraft, Programming and lots more.
+    </p>
+
+    <p>They are a great way for kids to learn about technology in a relaxed and more casual atmosphere than school. We
+        encourage kids to
+        explore their ideas: creativity and experimentation are encouraged!
+    </p>
+
+    <p>
+        <img src="images/minecraft.jpg" alt="Minecraft LAN Party"/>
+        <img src="images/minifig.jpg" alt="Lego hacking"/>
+        <img src="images/scratch.jpg" alt="Scratch Programming"/>
+        <img src="images/mindstorms.jpg" alt="Lego Mindstorms"/>
+    </p>
+
+    <p>
+        Our facilitators are all geeks - exploring and experimenting with technology is a big part of our
+        lives and we would like to encourage this spirit in the next generation. All facilitators hold valid Qld
+        Blue Cards.</p>
+
+    <h1>Summer Holiday Programme</h1>
+
+    <p>
+        Workshops will be running again during the summer holidays at
+        <a href="http://gctechspace.org">Gold Coast TechSpace</a> (Shop 4, 21 Nind St, Southport) most Thursdays.
+        This time our
+        programme has been expanded to include programming and electronics. Here are the currently scheduled events,
+        more
+        will be added as they are organised. You can also <a href="#mailinglist">subscribe to the mailing list below</a>
+        to be kept informed
+
+    </p>
+</div>
+
+<div id="content">Loading...</div>
+<div id="footer">
+    <p>
+        All workshops are currently $20 (plus booking fee of $1.50) per child and bookings are essential with payment
+        via the stickytickets website links below, please don't just turn up.
+    </p>
+
+    <h1>Mailing List</h1>
+
+    <p id="mailinglist">
+
+    <form action="http://gctechspace.us6.list-manage1.com/subscribe/post?u=a0398c158138ed99496827159&amp;id=639594666d"
+          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+          target="_blank" novalidate>
+        <label for="mce-EMAIL">Subscribe to our mailing list</label>
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+        <input type="text" value="" name="NAME" class="email" id="mce-NAME" placeholder="name">
+
+        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"
+                                  class="button"></div>
+    </form>
+    </p>
+
+    <p>For specific questions about the programme, please contact us at <a href="mailto:discovery@gctechspace.org">discovery@gctechspace.org</a>
+    </p>
+
+    <h1>About TechSpace</h1>
+
+    <p>To find out more about Gold Coast TechSpace, please visit our <a href="http://gctechspace.org">website</a> or
+        come along to one of our open events listed at our <a href="http://meetup.com/gctechspace">meetup group</a>.
+    </p>
+
+    <p> Please note we have now moved to the second floor of Robina Community Centre, San Antonio Drive (off Robina Town
+        Centre Drive).</p>
+
+    <p><strong>Not all of our workshops take at the TechSpace so please check event descriptions for details!</strong>
+    </p>
+
+    <div style="text-align: center">
+        <span>
+        <iframe width="425" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1,+San+Antonio+Dr,+Robina+QLD,+Australia&amp;aq=&amp;sll=-28.077192,153.382085&amp;sspn=0.002826,0.005284&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=San+Antonio+Dr,+Robina+Queensland+4226,+Australia&amp;ll=-28.077036,153.382555&amp;spn=0.002826,0.005284&amp;z=14&amp;output=embed"></iframe>
+        <span>
+            <img src="images/robina.jpg"/>
+        </span>
+    </div>
+</div>
+</body>
 </html>
-​
