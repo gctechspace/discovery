@@ -12,7 +12,7 @@
         function feedLoaded(result) {
             if (!result.error) {
                 // Grab the container we will put the results into
-                var container = document.getElementById("content-table");
+                var container = document.getElementById("content");
                 container.innerHTML = '';
 
                 // Loop through the feeds, putting the titles onto the page.
@@ -21,7 +21,7 @@
                 for (var i = 0; i < result.feed.entries.length; i++) {
                     var entry = result.feed.entries[i];
                     var div = document.createElement("div");
-                    td.appendChild(document.createTextNode(entry.title));
+                    td.appendChild(document.cre(entry.title));
                     container.appendChild(div);
                 }
             }
