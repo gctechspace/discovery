@@ -22,7 +22,7 @@
                     var entry = result.feed.entries[i];
                     var li = document.createElement("li");
                     var link = document.createElement('a');
-                    link.href=entry.title;
+                    link.href=entry.link;
                     var title = document.createTextNode(entry.title);
                     link.appendChild(title);
                     li.appendChild(link);
