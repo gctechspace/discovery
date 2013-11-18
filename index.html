@@ -12,7 +12,7 @@
         function feedLoaded(result) {
             if (!result.error) {
                 // Grab the container we will put the results into
-                var container = document.getElementById("content");
+                var container = document.getElementById("event-list");
                 container.innerHTML = '';
 
                 // Loop through the feeds, putting the titles onto the page.
@@ -20,13 +20,13 @@
                 // http://code.google.com/apis/ajaxfeeds/documentation/reference.html#JSON
                 for (var i = 0; i < result.feed.entries.length; i++) {
                     var entry = result.feed.entries[i];
-                    var div = document.createElement("div");
+                    var li = document.createElement("li");
                     var link = document.createElement('a');
                     link.href=entry.title;
                     var title = document.createTextNode(entry.title);
                     link.appendChild(title);
-                    div.appendChild(link);
-                    container.appendChild(div);
+                    li.appendChild(link);
+                    container.appendChild(li);
                 }
             }
         }
@@ -81,12 +81,12 @@
 </div>
 
 <div id="content">
-Loading...
+    <ul id="event-list">Loading...</ul>
 </div>
 <div id="footer">
     <p>
         All workshops are currently $20 (plus booking fee of $1.50) per child and bookings are essential with payment
-        via the stickytickets website links below, please don't just turn up.
+        via the <a href="http://www.stickytickets.com.au/gctechspace">sticky tickets</a> website links below, please don't just turn up.
     </p>
 
     <p>
