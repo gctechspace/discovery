@@ -21,7 +21,11 @@
                 for (var i = 0; i < result.feed.entries.length; i++) {
                     var entry = result.feed.entries[i];
                     var div = document.createElement("div");
-                    td.appendChild(document.cre(entry.title));
+                    var link = document.createElement('a');
+                    link.href=entry.title;
+                    var title = document.createTextNode(entry.title);
+                    link.appendChild(title);
+                    div.appendChild(link);
                     container.appendChild(div);
                 }
             }
